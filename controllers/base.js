@@ -32,7 +32,7 @@ exports.contact = (req,res)=>{
 
         const mailOptions ={
 
-            from:"iveskini6@gmail.com",
+            from:process.env.MAIL_USER,
             to: email,
             subject: "Nouveau message de " + nom + "sujet: " + sujet,
             text:"Merci! pour votre message je vous reviens dans peu!"
@@ -40,8 +40,8 @@ exports.contact = (req,res)=>{
 
         const AdminMail={
 
-            from:"iveskini6@gmail.com",
-            to: "iveskini6@gmail.com",
+            from:process.env.MAIL_USER,
+            to: process.env.MAIL_USER,
             sujet:"Vous avez une notification de " + nom,
             text:"nom: "+nom + "\nemail: "+email +"\nsujet: "+sujet +"\nmessage: "+ message
         };
